@@ -1,48 +1,51 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Counter Increment</title>
-</head>
-<body>
+
+    <title>Counter</title>
+
     <style>
         body {
-            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+
+            display: flex;
+
+            background-color: black;
+        }
+
+        .container {
+            flex-grow: 1;
+
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            flex-direction: column;
         }
+
         button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        #counter {
-            font-size: 24px;
-            margin: 20px;
+            height: 2rem;
+            width: 10rem;
         }
     </style>
 
-    <h1>Counter</h1>
-    <div id="counter">0</div>
-    <button onclick="incrementCounter()">Increment</button>
+</head>
+
+<body>
+    <div class="container">
+        <button onclick="incrementCounter()" id="counter">Count</button>
+    </div>
 
     <script>
         let count = 0;
         function incrementCounter() {
             count++;
-            document.getElementById('counter').textContent = count;
+            document.getElementById('counter').innerText = `Count: ${count}`;
         }
     </script>
 </body>
+
 </html>
